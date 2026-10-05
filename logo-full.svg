@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1e1642"/>
+      <stop offset="60%" stop-color="#0e0a22"/>
+      <stop offset="100%" stop-color="#070514"/>
+    </radialGradient>
+
+    <!-- White Neon Aura Halo Filter -->
+    <filter id="whiteHalo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="30" result="blur2"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.95" result="whiteColor"/>
+      <feComposite in="whiteColor" in2="blur1" operator="in" result="glow1"/>
+      <feComposite in="whiteColor" in2="blur2" operator="in" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drop shadow for overlapping ribbon -->
+    <filter id="ribbonShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="-4" dy="8" stdDeviation="6" flood-color="#0a0518" flood-opacity="0.75"/>
+    </filter>
+
+    <!-- Emblem Gradients -->
+    <!-- Gradient for Y (Background Stroke) -->
+    <linearGradient id="gradY" x1="0.3" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#ab84ff"/>
+      <stop offset="35%" stop-color="#8c52ff"/>
+      <stop offset="70%" stop-color="#5522aa"/>
+      <stop offset="100%" stop-color="#240c56"/>
+    </linearGradient>
+
+    <!-- Gradient for R/Z Loop (Foreground Overlapping Stroke) -->
+    <linearGradient id="gradLoop" x1="0" y1="0.1" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#8747f5"/>
+      <stop offset="40%" stop-color="#9d5cfc"/>
+      <stop offset="75%" stop-color="#551ea8"/>
+      <stop offset="100%" stop-color="#1f0945"/>
+    </linearGradient>
+
+    <!-- Sparkle Shape -->
+    <g id="star4">
+      <path d="M 0,-20 Q 0,0 20,0 Q 0,0 0,20 Q 0,0 -20,0 Q 0,0 0,-20 Z" fill="#b993ff" opacity="0.9"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGlow)"/>
+
+  <!-- EMBLEM GROUP WITH GLOW -->
+  <g transform="translate(0, -20)">
+    <!-- Aura Glow Layer -->
+    <g filter="url(#whiteHalo)">
+      <!-- Duplicate of all emblem strokes in solid white for the pure bright halo -->
+      <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Y Base strokes -->
+        <path d="M 325,120 L 375,215 L 340,315" stroke-width="48"/>
+        <path d="M 425,120 L 375,215" stroke-width="48"/>
+        <!-- Arch & Loop stroke -->
+        <path d="M 360,205 C 385,160 445,155 475,185 C 495,205 475,235 435,245 C 395,255 405,295 472,282" stroke-width="48"/>
+      </g>
+    </g>
+
+    <!-- Foreground Rendered Emblem Shapes -->
+    <!-- 1. Y Stroke (Back Layer) -->
+    <g stroke="url(#gradY)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 325,120 L 375,215 L 340,315"/>
+      <path d="M 425,120 L 375,215"/>
+    </g>
+
+    <!-- 2. Arch & Swooping Ribbon (Front Overlapping Layer with Shadow) -->
+    <g filter="url(#ribbonShadow)">
+      <path d="M 360,205 C 385,160 445,155 475,185 C 495,205 475,235 435,245 C 395,255 405,295 472,282" 
+            stroke="url(#gradLoop)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+
+    <!-- 3. Sparkles / Stars (Top Right) -->
+    <use href="#star4" x="460" y="95" transform="scale(1)"/>
+    <use href="#star4" x="490" y="70" transform="scale(0.65)"/>
+    <use href="#star4" x="485" y="140" transform="scale(0.7)"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <!-- "Yozora" -->
+  <text x="400" y="470" text-anchor="middle" fill="#ffffff" 
+        font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', -apple-system, sans-serif" 
+        font-size="78" font-weight="700" letter-spacing="1.5">Yozora</text>
+
+  <!-- "Anime & Manga Station" -->
+  <text x="400" y="525" text-anchor="middle" fill="#d4c7f5" 
+        font-family="'Plus Jakarta Sans', 'Segoe UI', -apple-system, sans-serif" 
+        font-size="28" font-weight="400" letter-spacing="0.5" opacity="0.9">Anime &amp; Manga Station</text>
+</svg>
