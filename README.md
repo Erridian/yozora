@@ -72,27 +72,13 @@
 
 ---
 
-## 🚀 Установка и запуск
+## 🚀 Запуск
 
-### Вариант 1: Готовые сборки
+
 Скачайте актуальный релиз для вашей операционной системы со страницы **[Releases](https://github.com/Erridian/anicli-gui/releases)**:
 * **Windows**: `anicli-ru-gui.exe`
 * **Android**: `anicli-gui-android.apk`
 * **Linux / macOS**: Бинарные сборки `x86_64` и `arm64`
-
-### Вариант 2: Сборка из исходников (Go)
-Требуется установленный **Go 1.22+**:
-```bash
-# Клонирование репозитория
-git clone https://github.com/Erridian/anicli-gui.git
-cd anicli-gui
-
-# Сборка графического приложения
-go build -v ./cmd/anicli-ru-gui
-
-# Запуск
-./anicli-ru-gui
-```
 
 ---
 
