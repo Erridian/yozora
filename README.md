@@ -75,9 +75,9 @@
 ## 🚀 Запуск
 
 
-Скачайте актуальный релиз для вашей операционной системы со страницы **[Releases](https://github.com/Erridian/anicli-gui/releases)**:
-* **Windows**: `anicli-ru-gui.exe`
-* **Android**: `anicli-gui-android.apk`
+Скачайте актуальный релиз для вашей операционной системы со страницы **[Releases](https://github.com/Erridian/yozora/releases)**:
+* **Windows**: `yozora-gui.exe`
+* **Android**: `yozora-android.apk`
 * **Linux / macOS**: Бинарные сборки `x86_64` и `arm64`
 
 ---
@@ -85,7 +85,7 @@
 ## ⚙️ Флаги запуска
 
 ```text
-Использование: anicli-ru-gui [параметры]
+Использование: yozora [параметры]
 
 Параметры:
   -p, --port <порт>      Порт локального веб-сервера GUI (по умолчанию: 3998)
